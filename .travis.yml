@@ -1,0 +1,14 @@
+language: csharp
+solution: "./Web_app/Web_app.sln"
+mono: none
+dotnet: 2.0.0
+build: trusty
+jobs:
+  include:
+  - stage: build
+    script: dotnet build "./Web_app"
+  - stage: test
+    script: dotnet test "./Web_app/TestProject"
+  - stage: deploy
+    script: skip
+    
