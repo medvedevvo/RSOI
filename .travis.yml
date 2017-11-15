@@ -11,7 +11,7 @@ jobs:
     script: dotnet build "./Web_app"
   - stage: test
     script: dotnet test "./Web_app/TestProject"
-    stage: deploy
+  - stage: deploy
     script: skip
     deploy:
         provider: azure_web_apps
