@@ -27,7 +27,7 @@ namespace Web_app
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello, world!\n");
+                await context.Response.WriteAsync("Hello, f**** world!\n");
                 await context.Response.WriteAsync("Hello again!");
             });
         }
