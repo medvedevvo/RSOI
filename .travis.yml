@@ -5,12 +5,15 @@ dotnet: 2.0.0
 build: trusty
 notifications:
   email: false
+before_deploy: "git push origin master:refs/heads/master"
 jobs:
   include:
   - stage: build
     script: dotnet build "./Web_app"
   - stage: test
     script: dotnet test "./Web_app/TestProject"
-  - stage: deploy
-    script: skip
+  - stage: deploy:
+        provider: azure_web_apps
+        skip_cleanup: true
+        verbose: true
     
