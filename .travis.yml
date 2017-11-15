@@ -11,7 +11,6 @@ jobs:
     script: dotnet build "./Web_app"
   - stage: test
     script: dotnet test "./Web_app/TestProject"
-  - stage: before_deploy: "git push origin master:refs/heads/master"
     stage: deploy:
         provider: azure_web_apps
         skip_cleanup: true
